@@ -6,7 +6,7 @@ namespace Archivist.Commands
     public class DelegateCommand : DelegateCommand<object>
     {
         public DelegateCommand(Action onExecute, Func<bool> onCanExecute = null)
-        : base(x => onExecute(), o => onCanExecute?.Invoke() ?? true) { }
+        : base(obj => onExecute(), obj => onCanExecute?.Invoke() ?? true) { }
     }
 
     public class DelegateCommand<T> : ICommand
