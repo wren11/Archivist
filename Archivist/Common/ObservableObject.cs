@@ -54,6 +54,8 @@ namespace Archivist.Common
         {
             if (propertyName == null)
                 throw new ArgumentNullException(nameof(propertyName));
+
+            OnPropertyChanging(propertyName);
         }
 
         protected virtual void OnPropertyChanging([CallerMemberName] string propertyName = "")
